@@ -1,6 +1,7 @@
 <?php
-	require("dev.php");
+	include("dev.php");
 	require("html.php");
+	require("inf0.php");
 /*
 {}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}
 >> 2233.php                                                          <<,

