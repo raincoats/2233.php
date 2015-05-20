@@ -70,7 +70,7 @@ $html_top = <<< EOF
 		<code>
 			<pre><br><br>
 EOF;
-	// gotta keep your html all semantic and proper and shit
+// gotta keep your html all semantic and proper and shit
 $html_bottom = <<< EOF
 			</pre>
 		</code>
