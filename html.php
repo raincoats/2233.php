@@ -1,5 +1,6 @@
 <?php
 
+// this next function contains the page's html, no cmd exec happens here
 function fuck_abbott($which){
 
 	// this is a few bits of inf0 for the user, like
@@ -41,6 +42,7 @@ $html_bottom = <<< EOF
 </html>
 EOF;
 
+	// i hope this is self explanatory
 	if ($which == 0){
 		return $html_top;
 	} else {
