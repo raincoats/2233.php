@@ -53,7 +53,7 @@ $html_top = <<< EOF
 <html>
 	<head>
 		<style>
-			input{background-color:#fff;width:50%;}code,input{font-size:12px;color:#000;font-family:"Monaco",
+			input{background-color:#fff;width:50%;}code,input,*{font-size:12px;color:#000;font-family:"Menlo","Monaco",
 			"Consolas",monospace !important;}body{background-color:#fafafa;}banana{ color:#aaa;}
 		</style>
 	</head>
@@ -65,7 +65,7 @@ $html_top = <<< EOF
 			<span>$ </span>
 			<input type="text" name="whosthere" autocomplete="off" autofocus>
 			<span>2&gt;&amp;1</span><br>
-			<button value="Submit" name="submit" type="submit">~$$$$</button>
+			<button value="Submit" name="submit" type="submit">~\$ubM1t~~&gt;</button>
 		</form>
 		<code>
 			<pre><br><br>
