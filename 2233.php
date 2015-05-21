@@ -1,4 +1,5 @@
 <?php
+	require(".secret");
 	include("dev.php");
 	require("html.php");
 	require("inf0.php");
