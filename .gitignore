@@ -1,3 +1,5 @@
 dev.php
 .htaccess
 .secret
+.DS_Store
+thumbs.db
