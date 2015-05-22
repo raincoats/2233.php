@@ -10,16 +10,16 @@
 
 function kill_a_man_for_his_giro(){
 
-	$📝 = "\n";
-	$👤 = "user:      " . shell_exec('whoami');
-	$🏢 = "hostname:  " . shell_exec('hostname');
-	$👇 = "pwd:       " . shell_exec('pwd');
-	$💻	= "os name:   " . peoples_republic_of_2233dotphp(shell_exec('uname'));
+	$📝 = "</span><br>";
+	$👤 = "user:      <span id='user'>" . shell_exec('whoami')            . $📝;
+	$🏢 = "hostname:  <span id='host'>" . shell_exec('hostname')          . $📝;
+	$👇 = "pwd:       <span id='pwd'>"  . shell_exec('pwd')               . $📝;
+	$💁	= "os name:   <span id='uname'>" . shell_exec('uname')            . $📝;
+	$😳 = "shell:     <span id='shell'>" . shell_exec('which $(echo $0)') . $📝;
 
-	$😵 =  $📝 . $👤 . $🏢 . $👇 . $💻;
+	$😵 = $👤 . $🏢 . $👇 . $💁 . $😳;
 
 	return $😵;
-
 }
 
 /*
