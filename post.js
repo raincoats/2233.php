@@ -45,8 +45,9 @@ function _007(secret_command) {
 function moneypenny(paperwork, clearance){
 
 	var dummy_prompt = '<span class="console-dummy-prompt">$' + 
-					   '<span class="blink">_</span></span>'  + 
-					   '<span id="console-current-line"></span>';
+					   '<span class="blink">_</span></span>';
+
+	var current_line = '<span id="console-current-line"></span>';
 
 	var dollarsign = '<span class="console-prompt">$ </span>';
 
@@ -55,7 +56,7 @@ function moneypenny(paperwork, clearance){
 		// if this is the executed command from 2233.php
 		case "top-secret":
 			paperwork = '<span class="console-exec"><pre>' + paperwork + 
-						'</pre></span>' + dummy_prompt;
+						'</pre></span>' + dummy_prompt + current_line;
 			break;
 
 		// if this is the command the user typed
@@ -63,7 +64,7 @@ function moneypenny(paperwork, clearance){
 			// grab the user, hostname, pwd etc for the prompt
 			paperwork = dollarsign + '<span class="console-cmd">' + 
 						paperwork + '</span><br>';
-			// delete the dummy prompt
+			// delete the dummy prompt + current line
 			$(".console-dummy-prompt").remove();
 			$("#console-current-line").remove();
 			break;
@@ -114,16 +115,9 @@ $(document).ready(function(){ // codecademy taught me to do this, idk if i need 
 		var post_response = _007(commands_to_post);
 	});
 
-/*
-	// this clones the input for the input and prompt lines
-	var current_line = $('#console-user-input');
-	$('input').keypress(function(){
-		current_line.val(this.value);
-	})
-*/
-$(function() {                                       // <== Doc Ready
-    $("input").keypress(function() {                  // When the email is changed
-        $('#console-current-line').text(this.value);                  // copy it over to the mail
+$(function() {
+    $("input").keypress(function() {
+        $('#console-current-line').text(this.value);
     });
 });
 });
