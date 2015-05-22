@@ -79,8 +79,6 @@ function moneypenny(paperwork, clearance){
 function q(intel){
 	// put it all on screen!
 	$("#out").append(intel);
-
-	//$('#console-current-line').
 }
 
 
