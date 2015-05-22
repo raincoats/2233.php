@@ -65,6 +65,11 @@ function moneypenny(paperwork, clearance){
 			// delete the dummy prompt + current line
 			$(".console-dummy-prompt").remove();
 			$("#console-current-line").remove();
+				// fuck it
+				$('.console-prompt').remove();
+				$('.console-cmd').remove();
+				$('.console-exec').remove();
+				$('#bottom').remove();
 			break;
 
 		default:
