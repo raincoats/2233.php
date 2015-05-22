@@ -91,7 +91,7 @@ $(document).ready(function(){ // codecademy taught me to do this, idk if i need 
 // run this once
 	var initial_dummy_prompt = 	'<br><span class="console-dummy-prompt">$' + 
 								'<span class="blink">_</span></span>'  + 
-								'<span id="console-current-line"></span>';
+								current_line;
 	q(initial_dummy_prompt);
 
 
