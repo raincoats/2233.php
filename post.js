@@ -114,10 +114,10 @@ $(document).ready(function(){ // codecademy taught me to do this, idk if i need 
 		var post_response = _007(commands_to_post);
 	});
 
-$(function() {
-    $("input").keypress(function() {
-        $('#console-current-line').text(this.value);
-    });
-});
+	$(function() {
+	    $("input").keypress(function() {
+	        $('#console-current-line').text(this.value);
+	    });
+	});
 });
 
