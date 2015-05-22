@@ -44,22 +44,28 @@ function _007(secret_command) {
  */
 function moneypenny(paperwork, clearance){
 
+	var dummy_prompt = '<span class="console-dummy-prompt">$' + 
+					   '<span class="blink">_</span></span>'  + 
+					   '<span id="console-current-line"></span>';
+
+	var dollarsign = '<span class="console-prompt">$ </span>';
+
 	switch (clearance) {
 
 		// if this is the executed command from 2233.php
 		case "top-secret":
-			paperwork = '<span class="console-exec">' + paperwork + '</span><br><br>' + 
-						'<span class="console-dummy-prompt">$<span class="blink">_</span></span>';
+			paperwork = '<span class="console-exec"><pre>' + paperwork + 
+						'</pre></span>' + dummy_prompt;
 			break;
 
 		// if this is the command the user typed
 		case "for-your-eyes-only":
 			// grab the user, hostname, pwd etc for the prompt
-			var dollarsign = '<span class="console-prompt">$ </span>';
 			paperwork = dollarsign + '<span class="console-cmd">' + 
 						paperwork + '</span><br>';
 			// delete the dummy prompt
 			$(".console-dummy-prompt").remove();
+			$("#console-current-line").remove();
 			break;
 
 		default:
@@ -73,10 +79,21 @@ function moneypenny(paperwork, clearance){
 function q(intel){
 	// put it all on screen!
 	$("#out").append(intel);
+
+	//$('#console-current-line').
 }
 
 
+
 $(document).ready(function(){ // codecademy taught me to do this, idk if i need to
+
+
+// run this once
+	var initial_dummy_prompt = 	'<br><span class="console-dummy-prompt">$' + 
+					   		   	'<span class="blink">_</span></span>'  + 
+					   			'<span id="console-current-line"></span>';
+	q(initial_dummy_prompt);
+
 
 	// listens for the enter key, posts command when pressed
 	$(this).keypress(function(e) {
@@ -96,4 +113,18 @@ $(document).ready(function(){ // codecademy taught me to do this, idk if i need 
 		moneypenny(commands_to_post, "for-your-eyes-only");
 		var post_response = _007(commands_to_post);
 	});
+
+/*
+	// this clones the input for the input and prompt lines
+	var current_line = $('#console-user-input');
+	$('input').keypress(function(){
+		current_line.val(this.value);
+	})
+*/
+$(function() {                                       // <== Doc Ready
+    $("input").keypress(function() {                  // When the email is changed
+        $('#console-current-line').text(this.value);                  // copy it over to the mail
+    });
 });
+});
+

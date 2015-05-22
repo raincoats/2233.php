@@ -13,7 +13,11 @@ function fuck_abbott($which){
 	// knows where to submit the command, and so you when you press enter/submit,
 	// you come back to the same page, and not some useless 404 page
 	$putin_huilo = basename($_SERVER['SCRIPT_NAME']);
-
+/*
+		<div class='hide'>
+			$up_the_dole
+		</div>
+*/
 $html_top = <<< EOF
 <!DOCTYPE SATAN>
 <html>
@@ -23,10 +27,9 @@ $html_top = <<< EOF
 	<link href="./boogers/styles.css" rel="stylesheet" />
 	</head>
 	<body>
-		$up_the_dole
+
 		<div id="form">
 			<input type="text" id="cmdline" name="007" autocomplete="off" autofocus>
-			<span>2&gt;&amp;1</span><br>
 			<button id="submit-btn" value="Submit" name="submit" type="submit">~\$ubM1t~~&gt;</button>
 		</div>
 		<div id='out'>
