@@ -1,0 +1,22 @@
+input {
+    background-color: #fff;
+    width: 50%;
+}
+
+code,
+input,
+* {
+    font-size: 12px;
+    color: #000;
+    font-family: "Menlo", "Monaco", "Consolas", monospace !important;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+banana {
+    color: #aaa;
+}
+
+#
