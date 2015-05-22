@@ -2,9 +2,8 @@
 
 var dummy_prompt = '<span class="console-dummy-prompt">$' + 
 				   '<span class="blink">_</span></span>';
-
-var current_line = '<span id="console-current-line"></span>';
-
+var bottom_anchor = '<a id="bottom" class="hidden" href="console-current-line"></a>'
+var current_line = bottom_anchor + '<span id="console-current-line"></span>';
 var dollarsign = '<span class="console-prompt">$ </span>';
 
 /* _007
@@ -81,6 +80,9 @@ function q(intel){
 	$("#out").append(intel);
 }
 
+
+
+
 function submit_routine(){
 	var commands_to_post = $("input").val();
 	$('input').val('');
@@ -88,9 +90,11 @@ function submit_routine(){
 	moneypenny(commands_to_post, "for-your-eyes-only");
 	var post_response = _007(commands_to_post);
 
-	// keep scrolled at the bottom
-	$('#out').scrollTop($('#out').height());
 }
+
+
+
+
 
 
 $(document).ready(function(){ // codecademy taught me to do this, idk if i need to
@@ -120,5 +124,7 @@ $(document).ready(function(){ // codecademy taught me to do this, idk if i need 
 			$('#console-current-line').text(this.value);
 		});
 	});
+
+
 });
 

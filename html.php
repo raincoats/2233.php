@@ -23,6 +23,7 @@ $html_top = <<< EOF
 <html>
 	<head>
 	<script type="text/javascript" src="./boogers/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="./boogers/jquery.scrollTo.min.js"></script>
 	<script type="text/javascript" src="post.js"></script>
 	<link href="./boogers/styles.css" rel="stylesheet" />
 	</head>

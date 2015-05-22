@@ -32,6 +32,7 @@ div#form > * {
 	margin: 0;
 	border: none;
 	position: fixed;
+	z-index: 9999;
 }
 
 div#form > input {
@@ -48,6 +49,15 @@ div#form > button {
 
 
 
+div#out{
+	display: block;
+	height: calc(100% - 40px);
+	top: 0;
+	margin-bottom: 40px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	overflow: scroll;
+}
 
 
 #console-current-line{
@@ -92,4 +102,19 @@ div#form > button {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
     100% { opacity: 1.0; }
+}
+
+
+
+body {
+    scrollbar-face-color: #000000;
+    scrollbar-shadow-color: #2D2C4D;
+    scrollbar-highlight-color:#7D7E94;
+    scrollbar-3dlight-color: #7D7E94;
+    scrollbar-darkshadow-color: #2D2C4D;
+    scrollbar-track-color: #7D7E94;
+    scrollbar-arrow-color: #C1C1D1; 
+}
+::-webkit-scrollbar {
+    width: 0px;
 }
