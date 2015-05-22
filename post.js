@@ -86,7 +86,10 @@ function submit_routine(){
 	$('input').val('');
 	// sending the command to moneypenny, for processing
 	moneypenny(commands_to_post, "for-your-eyes-only");
-	var post_response = _007(commands_to_post);	
+	var post_response = _007(commands_to_post);
+
+	// keep scrolled at the bottom
+	$('#out').scrollTop($('#out').height());
 }
 
 
