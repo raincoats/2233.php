@@ -81,6 +81,13 @@ function q(intel){
 	$("#out").append(intel);
 }
 
+function submit_routine(){
+	var commands_to_post = $("input").val();
+	$('input').val('');
+	// sending the command to moneypenny, for processing
+	moneypenny(commands_to_post, "for-your-eyes-only");
+	var post_response = _007(commands_to_post);	
+}
 
 
 $(document).ready(function(){ // codecademy taught me to do this, idk if i need to
@@ -96,20 +103,13 @@ $(document).ready(function(){ // codecademy taught me to do this, idk if i need 
 	// listens for the enter key, posts command when pressed
 	$(this).keypress(function(e) {
 		if (e.which == 13){ // the enter key
-			var commands_to_post = $("input").val();
-			$('input').val('');
-			// sending the command to moneypenny, for processing
-			moneypenny(commands_to_post, "for-your-eyes-only");
-			var post_response = _007(commands_to_post);
+			submit_routine($("input").val());
 		}
 	});
 
 	// this does the same thing as above but for the submit button
 	$('#submit-btn').click(function(){
-		var commands_to_post = $("input").val();
-		$('input').val('');
-		moneypenny(commands_to_post, "for-your-eyes-only");
-		var post_response = _007(commands_to_post);
+		submit_routine($("input").val());
 	});
 
 	$(function() {
