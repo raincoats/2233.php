@@ -48,15 +48,18 @@ function moneypenny(paperwork, clearance){
 
 		// if this is the executed command from 2233.php
 		case "top-secret":
-			paperwork = '<span class="console-exec">' + paperwork + '</span><br><br>';
+			paperwork = '<span class="console-exec">' + paperwork + '</span><br><br>' + 
+						'<span class="console-dummy-prompt">$<span class="blink">_</span></span>';
 			break;
 
 		// if this is the command the user typed
 		case "for-your-eyes-only":
 			// grab the user, hostname, pwd etc for the prompt
-			var prompt = build_prompt();
-			paperwork = prompt + '<span class="console-cmd">' + 
+			var dollarsign = '<span class="console-prompt">$ </span>';
+			paperwork = dollarsign + '<span class="console-cmd">' + 
 						paperwork + '</span><br>';
+			// delete the dummy prompt
+			$(".console-dummy-prompt").remove();
 			break;
 
 		default:
@@ -80,8 +83,7 @@ $(document).ready(function(){ // codecademy taught me to do this, idk if i need 
 		if (e.which == 13){ // the enter key
 			var commands_to_post = $("input").val();
 			$('input').val('');
-			// sending the command to moneypenny, to show it on the screen
-			// next to a $, like a real shell
+			// sending the command to moneypenny, for processing
 			moneypenny(commands_to_post, "for-your-eyes-only");
 			var post_response = _007(commands_to_post);
 		}
