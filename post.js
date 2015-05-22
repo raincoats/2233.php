@@ -1,5 +1,11 @@
 /* i don't know why jquery files end with .js */
 
+var dummy_prompt = '<span class="console-dummy-prompt">$' + 
+				   '<span class="blink">_</span></span>';
+
+var current_line = '<span id="console-current-line"></span>';
+
+var dollarsign = '<span class="console-prompt">$ </span>';
 
 /* _007
  * sends a shell command via an AJAX POST request, returns result to secretary function.
@@ -43,13 +49,6 @@ function _007(secret_command) {
  *
  */
 function moneypenny(paperwork, clearance){
-
-	var dummy_prompt = '<span class="console-dummy-prompt">$' + 
-					   '<span class="blink">_</span></span>';
-
-	var current_line = '<span id="console-current-line"></span>';
-
-	var dollarsign = '<span class="console-prompt">$ </span>';
 
 	switch (clearance) {
 
