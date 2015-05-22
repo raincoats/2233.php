@@ -90,8 +90,8 @@ $(document).ready(function(){ // codecademy taught me to do this, idk if i need 
 
 // run this once
 	var initial_dummy_prompt = 	'<br><span class="console-dummy-prompt">$' + 
-					   		   	'<span class="blink">_</span></span>'  + 
-					   			'<span id="console-current-line"></span>';
+								'<span class="blink">_</span></span>'  + 
+								'<span id="console-current-line"></span>';
 	q(initial_dummy_prompt);
 
 
@@ -115,9 +115,9 @@ $(document).ready(function(){ // codecademy taught me to do this, idk if i need 
 	});
 
 	$(function() {
-	    $("input").keypress(function() {
-	        $('#console-current-line').text(this.value);
-	    });
+		$("input").keypress(function() {
+			$('#console-current-line').text(this.value);
+		});
 	});
 });
 
