@@ -10,14 +10,24 @@
 
 function kill_a_man_for_his_giro(){
 
-	$📝 = "</span><br>";
-	$👤 = "user:      <span id='user'>" . shell_exec('whoami')            . $📝;
-	$🏢 = "hostname:  <span id='host'>" . shell_exec('hostname')          . $📝;
-	$👇 = "pwd:       <span id='pwd'>"  . shell_exec('pwd')               . $📝;
-	$💁	= "os name:   <span id='uname'>" . shell_exec('uname')            . $📝;
-	$😳 = "shell:     <span id='shell'>" . shell_exec('which $(echo $0)') . $📝;
+	$👤 = "'".exec('whoami')."'";
+	$🏢 = "'".exec('hostname')."'";
+	$👇 = "'".exec('pwd')."'";
+	$💁	= "'".exec('uname')."'";
+	$😳 = "'".exec('which $(echo $0)')."'";
 
-	$😵 = $👤 . $🏢 . $👇 . $💁 . $😳;
+
+$😵 = <<< EOF
+	<script>
+	var console_info={
+			'user':  $👤,
+			'host':  $🏢,
+			'pwd':   $👇,
+			'uname': $💁,
+			'shell': $😳,
+		}
+	</script>
+EOF;
 
 	return $😵;
 }

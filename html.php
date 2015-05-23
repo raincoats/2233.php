@@ -13,11 +13,7 @@ function fuck_abbott($which){
 	// knows where to submit the command, and so you when you press enter/submit,
 	// you come back to the same page, and not some useless 404 page
 	$putin_huilo = basename($_SERVER['SCRIPT_NAME']);
-/*
-		<div class='hide'>
-			$up_the_dole
-		</div>
-*/
+
 $html_top = <<< EOF
 <!DOCTYPE SATAN>
 <html>
@@ -25,6 +21,7 @@ $html_top = <<< EOF
 	<script type="text/javascript" src="./boogers/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="./boogers/jquery.scrollTo.min.js"></script>
 	<script type="text/javascript" src="post.js"></script>
+	$up_the_dole
 	<link href="./boogers/styles.css" rel="stylesheet" />
 	</head>
 	<body>
