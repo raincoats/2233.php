@@ -125,11 +125,15 @@ $(document).ready(function(){ // codecademy taught me to do this, idk if i need 
 	});
 
 	$(function() {
-		$("input").keypress(function() {
+		$("input").keydown(function() {
 			$('#console-current-line').text(this.value);
 		});
 	});
-
-
+	// reduces lag
+	$(function() {
+		$("input").keyup(function() {
+			$('#console-current-line').text(this.value);
+		});
+	});
 });
 
