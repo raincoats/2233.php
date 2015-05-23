@@ -1,10 +1,10 @@
 /* i don't know why jquery files end with .js */
 
-var dummy_prompt = '<span class="console-dummy-prompt">$' + 
-				   '<span class="blink">_</span></span>';
-var bottom_anchor = '<a id="bottom" class="hidden" href="console-current-line"></a>'
-var current_line = bottom_anchor + '<span id="console-current-line"></span>';
+var prompt_blink = '<span class="blink">_</span></span>';
+//var dummy_prompt = '<span class="console-dummy-prompt">$</span>';
+var dummy_prompt = '';
 var dollarsign = '<span class="console-prompt">$ </span>';
+var current_line = dollarsign + '<span id="console-current-line"></span>';
 
 /* _007
  * sends a shell command via an AJAX POST request, returns result to secretary function.
@@ -61,7 +61,7 @@ function moneypenny(paperwork, clearance){
 		case "for-your-eyes-only":
 			// grab the user, hostname, pwd etc for the prompt
 			paperwork = dollarsign + '<span class="console-cmd">' + 
-						paperwork + '</span><br>';
+						paperwork + '</span>';
 			// delete the dummy prompt + current line
 			$(".console-dummy-prompt").remove();
 			$("#console-current-line").remove();
@@ -127,12 +127,16 @@ $(document).ready(function(){ // codecademy taught me to do this, idk if i need 
 	$(function() {
 		$("input").keydown(function() {
 			$('#console-current-line').text(this.value);
+			$(".console-dummy-prompt").remove();
+			$('#console-current-line').append(prompt_blink);
 		});
 	});
 	// reduces lag
 	$(function() {
 		$("input").keyup(function() {
 			$('#console-current-line').text(this.value);
+			$(".console-dummy-prompt").remove();
+			$('#console-current-line').append(prompt_blink);
 		});
 	});
 });
