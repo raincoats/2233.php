@@ -1,4 +1,5 @@
 <?php
+//; exit 1		# in case you did ./rand.php
 
 // are we running from a webserver or terminal?
 if ( ! isset($_SERVER['TERM'])){
