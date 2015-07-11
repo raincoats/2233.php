@@ -11,6 +11,7 @@
 
 ...and then a new web shell pops out.
     
+See `example.php` for an example of the shells it produces. They're all pretty much the same format, just randomized variable/function names.
 
 ## Licence
 
