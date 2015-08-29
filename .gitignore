@@ -1,3 +1,8 @@
-dev.php
-.htaccess
-.secret
+*
+/*
+
+!.gitignore
+!example.php
+!LICENCE.md*
+!readme.md*
+!2233.php*
