@@ -8,16 +8,13 @@ if ( ! isset($_SERVER['TERM'])){
 
 
 function make_random_name(){
-
     // making some randomness
     $name = rand() * rand();
     $name = hash("whirlpool", $name);
     $name = crypt($name, rand());
 
-    // shorten
+    // shorten, rm leading numbers
     $name = preg_replace('~([\.\$/]|.{16}$)~', '', $name);
-
-    // rm leading numbers
     $name = preg_replace('/^[0-9]+/', '', $name);
 
     // make sure the regex didn't leave us an empty string
